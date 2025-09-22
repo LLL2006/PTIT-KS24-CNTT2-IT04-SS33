@@ -1,4 +1,3 @@
-// reducers/messageReducer.ts
 const initialState = "";
 
 export default function messageReducer(state = initialState, action: any) {

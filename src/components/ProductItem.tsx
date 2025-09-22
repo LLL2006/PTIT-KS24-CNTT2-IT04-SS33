@@ -5,7 +5,6 @@ const ProductItem = ({ product, onAddToCart }) => {
       alert("Số lượng sản phẩm vượt quá số lượng trong kho");
       return;
     }
-    // Gọi onAddToCart, chỉ truyền product
     onAddToCart(product);
   };
 
@@ -17,7 +16,6 @@ const ProductItem = ({ product, onAddToCart }) => {
         <p className="product-desc">{product.description}</p>
       </div>
       <div className="product-actions">
-        {/* Ô input chỉ hiển thị stock, readonly */}
         <input
           type="number"
           value={product.stock}

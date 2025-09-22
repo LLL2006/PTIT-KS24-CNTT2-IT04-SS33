@@ -1,4 +1,3 @@
-// reducers/cartReducer.ts
 const initialCart = JSON.parse(localStorage.getItem("cart") || "[]");
 
 export default function cartReducer(state = initialCart, action: any) {
@@ -7,7 +6,6 @@ export default function cartReducer(state = initialCart, action: any) {
       const { product } = action.payload;
       const exist = state.find((item: any) => item.id === product.id);
 
-      // Tính số lượng mới sau khi click
       const currentQty = exist ? exist.quantity : 0;
       const newQty = currentQty + 1;
 

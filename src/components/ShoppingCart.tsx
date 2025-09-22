@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ProductList from './ProductList';
 import Cart from './Cart';
-import '../index.css'; // Import CSS file
+import '../index.css';
 import {initialProducts} from '../reducer/productsReducer'
 
 const ShoppingCart = () => {
@@ -16,12 +16,10 @@ const ShoppingCart = () => {
     return;
   }
 
-  // Trừ stock trong products
   setProducts(products.map(p =>
     p.id === product.id ? { ...p, stock: p.stock - 1 } : p
   ));
 
-  // Thêm vào giỏ
   const existingItem = cartItems.find(item => item.id === product.id);
   if (existingItem) {
     setCartItems(cartItems.map(item =>
@@ -31,7 +29,6 @@ const ShoppingCart = () => {
     setCartItems([...cartItems, { ...product, quantity: 1 }]);
   }
 
-  // Show success
   setShowSuccess(true);
   setTimeout(() => setShowSuccess(false), 2000);
 };

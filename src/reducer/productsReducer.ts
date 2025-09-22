@@ -1,4 +1,3 @@
-// reducers/productsReducer.ts
 export const initialProducts = [
   {
     id: 1,
@@ -40,7 +39,7 @@ export default function productsReducer(state = initialProducts, action: any) {
       const { productId, quantity } = action.payload;
       return state.map((p) =>
         p.id === productId
-          ? { ...p, stock: p.stock - quantity } // giảm stock đúng key
+          ? { ...p, stock: p.stock - quantity } 
           : p
       );
     }
